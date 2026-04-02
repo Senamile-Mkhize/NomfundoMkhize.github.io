@@ -1,2 +1,2 @@
-Data Analyst Portfolio Project Repository.
-This project was inspired by the teachings of Alex The Analyst and uses datasets provided in his course. The project helped reinforce key data analytics concepts such as data cleaning, visualization, and dashboard design.
+This portfolio showcases my journey into the world of data and technology, highlighting my growing skills in HTML, data visualization, and problem-solving. It features projects that reflect my ability to transform data into meaningful insights and present them in a clear, user-friendly way. As an aspiring data analyst with a background in science, I am passionate about using data to support decision-making, particularly in health and research environments. This portfolio represents not only what I have learned so far, but also my commitment to continuous growth and development in the tech space.
+
