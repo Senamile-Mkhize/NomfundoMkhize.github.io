@@ -1,0 +1,473 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Senamile | Data Analyst Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* RESET */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#ffffff;
+color:#333;
+overflow-x:hidden;
+}
+
+/* COLORS */
+
+:root{
+--pink:#ff6fae;
+--blue:#5b8cff;
+--light:#f6f8ff;
+}
+
+/* NAVBAR */
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+position:fixed;
+width:100%;
+top:0;
+background:rgba(255,255,255,0.85);
+backdrop-filter:blur(10px);
+z-index:1000;
+}
+
+.logo{
+font-size:1.4rem;
+font-weight:600;
+}
+
+nav a{
+margin-left:25px;
+text-decoration:none;
+color:var(--blue);
+font-weight:500;
+position:relative;
+}
+
+nav a::after{
+content:'';
+width:0;
+height:2px;
+background:var(--pink);
+position:absolute;
+bottom:-5px;
+left:0;
+transition:0.3s;
+}
+
+nav a:hover::after{
+width:100%;
+}
+
+/* HERO */
+
+.hero{
+min-height:100vh;
+padding-top:140px;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:linear-gradient(270deg,var(--pink),var(--blue));
+background-size:400% 400%;
+animation:gradientMove 10s ease infinite;
+color:white;
+}
+
+@keyframes gradientMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.hero-content{
+max-width:600px;
+}
+
+.hero h1{
+font-size:2.8rem;
+margin-bottom:10px;
+}
+
+.hero h3{
+font-weight:400;
+margin-bottom:10px;
+}
+
+.location{
+margin-bottom:25px;
+}
+
+.hero-buttons{
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
+}
+
+/* BUTTONS */
+
+.btn{
+padding:10px 25px;
+border-radius:25px;
+text-decoration:none;
+display:inline-block;
+transition:0.3s;
+}
+
+.primary{
+background:white;
+color:var(--pink);
+}
+
+.primary:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+
+.secondary{
+border:2px solid white;
+color:white;
+}
+
+.secondary:hover{
+background:white;
+color:var(--pink);
+}
+
+/* SECTIONS */
+
+section{
+padding:90px 8%;
+text-align:center;
+}
+
+section h2{
+margin-bottom:35px;
+font-size:1.9rem;
+}
+
+/* SKILLS */
+
+.skills-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:25px;
+}
+
+.skill-card{
+background:var(--light);
+padding:25px;
+border-radius:15px;
+transition:0.3s;
+box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+
+.skill-card:hover{
+transform:translateY(-8px);
+box-shadow:0 15px 30px rgba(0,0,0,0.1);
+}
+
+.skill-card i{
+font-size:30px;
+margin-bottom:10px;
+color:var(--pink);
+}
+
+/* PROJECTS */
+
+.projects-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+}
+
+.project-card{
+background:white;
+padding:18px;
+border-radius:10px;
+box-shadow:0 3px 10px rgba(0,0,0,0.1);
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+transition:0.3s;
+}
+
+.project-card:hover{
+transform:translateY(-6px);
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+.project-card img{
+width:100%;
+height:180px;
+object-fit:cover;
+border-radius:8px;
+margin-bottom:10px;
+}
+
+.view-btn{
+display:inline-block;
+margin-top:15px;
+padding:8px 16px;
+background:#1e90ff;
+color:white;
+text-decoration:none;
+border-radius:5px;
+}
+
+/* EDUCATION */
+
+#education{
+padding-bottom:40px;
+}
+
+.education-card{
+background:var(--light);
+padding:25px;
+max-width:600px;
+margin:auto;
+border-radius:15px;
+}
+
+/* CONTACT */
+
+#contact{
+padding-top:40px;
+}
+
+.contact-icons{
+display:flex;
+justify-content:center;
+gap:35px;
+margin-bottom:20px;
+}
+
+.contact-icons a{
+font-size:30px;
+color:var(--pink);
+transition:0.3s;
+}
+
+.contact-icons a:hover{
+transform:scale(1.2);
+color:var(--blue);
+}
+
+/* SCROLL ANIMATION */
+
+.hidden{
+opacity:0;
+transform:translateY(40px);
+transition:all 0.8s ease;
+}
+
+.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+nav{
+display:none;
+}
+
+.hero h1{
+font-size:2.2rem;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h2 class="logo">Nomfundo.</h2>
+
+<nav>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#education">Education</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>Nomfundo Mkhize</h1>
+
+<p>Welcome to my world of data and growth.</p>
+
+<h3>Aspiring Data Analyst</h3>
+
+<p class="location"><i class="fas fa-map-marker-alt"></i> South Africa</p>
+
+<div class="hero-buttons">
+
+<a href="#projects" class="btn primary">View My Work</a>
+
+<a href="#contact" class="btn secondary">Get in Touch</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="about" class="hidden">
+
+<h2>About Me</h2>
+
+<p>
+I am a detail-oriented beginner data analyst with hands-on experience in SQL,
+Excel, and Python. I enjoy transforming raw data into meaningful insights
+and continuously strengthening my analytical and problem-solving skills.
+</p>
+
+</section>
+
+<section id="skills" class="hidden">
+
+<h2>Skills</h2>
+
+<div class="skills-grid">
+            
+
+<div class="skill-card"><i class="fas fa-file-excel"></i> Excel</div>
+
+<div class="skill-card"><i class="fas fa-database"></i> SQL</div>
+
+<div class="skill-card"><i class="fab fa-python"></i> Python</div>
+
+<div class="skill-card"><i class="fas fa-chart-line"></i> Power BI</div>
+
+<div class="skill-card"><i class="fas fa-chart-pie"></i> Tableau</div>
+
+</div>
+
+</section>
+
+<section id="projects" class="hidden">
+
+<h2>Projects</h2>
+
+<div class="projects-grid">
+
+<div class="project-card">
+<img src="images/HOUSING.png">
+<h3>SQL Data Cleaning-Housing Dataset</h3>
+<p><p>
+Cleaned housing data using SQL by removing duplicates,
+standardizing address fields and splitting columns to
+produce an analysis-ready dataset.Tools: SQL, Excel
+</p></p>
+<a href="https://github.com/Senamile-Mkhize/data-analytics-portfolio/blob/main/Data%20Cleaning%20Portfolio%20Project%20Queries%20(1).sql" target="_blank" class="view-btn">View Project</a>
+</div>
+
+<div class="project-card">
+<img src="images/Web Scrapping.png">
+<h3>Web Scraping with Python</h3>
+<p>Collected structured data from websites using Python and BeautifulSoup.</p>
+<a href="https://github.com/Senamile-Mkhize/data-analytics-portfolio/blob/main/Amazon%20Web%20Scrapper%20Project.ipynb" target="_blank" class="view-btn">View Project</a>
+</div>
+
+<div class="project-card">
+<img src="images/COVID-19.jpeg">
+<h3>COVID-19 Data Analysis with Python</h3>
+<p>Explored COVID-19 datasets using Python to identify trends and patterns.</p>
+<a href="https://github.com/Senamile-Mkhize/data-analytics-portfolio/blob/main/COVID%20Portfolio%20Project%20-%20Data%20Exploration.sql" target="_blank" class="view-btn">View Project</a>
+</div>
+
+<div class="project-card">
+<img src="images/TABLEAU.png">
+<h3>Tableau Dashboard</h3>
+<p>Interactive dashboard visualizing global Covid-19 data.</p>
+<a href="https://public.tableau.com/app/profile/nomfundo.mkhize2915/viz/COVID19Dashboard___Draft/GlobalHealthDashboard?publish=yes" class="view-btn">View Project</a>
+</div>
+
+</div>
+
+</section>
+
+<section id="education" class="hidden">
+
+<h2>Education</h2>
+
+<div class="education-card">
+
+<h3>BSc in Biochemistry and Genetics</h3>
+
+<p>University of KwaZulu-Natal</p>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h2>Contact</h2>
+
+<div class="contact-icons">
+
+<a href="mailto:nomfundomkhize013@gmail.com"><i class="fas fa-envelope"></i></a>
+
+<a href="https://www.linkedin.com/in/nomfundo-mkhize-641283231" target="_blank"><i class="fab fa-linkedin"></i></a>
+
+<a href="https://github.com/Senamile-Mkhize" target="_blank"><i class="fab fa-github"></i></a>
+
+</div>
+
+<p>Email: nomfundomkhize013@gmail.com</p>
+
+</section>
+
+<script>
+
+const observer = new IntersectionObserver((entries)=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+
+}
+});
+});
+
+document.querySelectorAll(".hidden").forEach(el=>{
+observer.observe(el);
+});
+
+</script>
+
+</body>
+</html>
+```
+
